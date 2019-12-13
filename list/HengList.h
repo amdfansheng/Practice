@@ -3,7 +3,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cassert>
-#include <utility>
+#include <utility>              // initializer_list
 #include <cstddef>              // ptrdiff_t
 #include <iterator>             // std::input_iterator_tag
 
@@ -29,23 +29,23 @@ struct HengList {
 		reference operator*() const noexcept { return np_->val; }
 		pointer operator->() const noexcept { return &np_->val; }
 
-		iterator& operator++() // 前置
+		iterator& operator++() // frefix
 		{
             np_ = np_->next;
             return *this;
 		}
-		iterator operator++(int) // 后置
+		iterator operator++(int) // postfix
 		{
             iterator temp(*this);
             ++*this;
             return temp;
 		}
-		iterator& operator--() // 前置
+		iterator& operator--() // prefix
 		{
             np_ = np_->prev;
             return *this;
 		}
-		iterator operator--(int) // 后置
+		iterator operator--(int) // postfix
 		{
             iterator temp(*this);
             --*this;

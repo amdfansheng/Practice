@@ -5,7 +5,7 @@
 #include <cassert>
 #include <utility>              // initializer_list
 #include <cstddef>              // ptrdiff_t
-#include <iterator>             // std::input_iterator_tag
+#include <iterator>             // std::bidirectional_iterator_tag
 
 template <typename T>
 struct HengList {
@@ -32,24 +32,24 @@ struct HengList {
 		iterator& operator++() // frefix
 		{
 		    np_ = np_->next;
-            	    return *this;
+            return *this;
 		}
 		iterator operator++(int) // postfix
 		{
-                    iterator temp(*this);
-                    ++*this;
-                    return temp;
+            iterator temp(*this);
+            ++*this;
+            return temp;
 		}
 		iterator& operator--() // prefix
 		{
-                    np_ = np_->prev;
-                    return *this;
+            np_ = np_->prev;
+            return *this;
 		}
 		iterator operator--(int) // postfix
 		{
-                    iterator temp(*this);
-                    --*this;
-                    return temp;
+            iterator temp(*this);
+            --*this;
+            return temp;
 		}
 		bool operator==(const iterator& rhs) const noexcept
 		{

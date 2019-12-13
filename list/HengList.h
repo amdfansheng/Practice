@@ -96,7 +96,7 @@ struct HengList {
 };
 
 template<typename T>
-    void
+void
 HengList<T>::clearup()
 {
     for (auto it = begin(), tmp = it; it != end(); tmp = it) {
@@ -105,7 +105,7 @@ HengList<T>::clearup()
     }
 }
 
-    template<typename T>
+template<typename T>
 HengList<T>::HengList(std::initializer_list<T> il)
 {
     for (auto it = il.begin(); it != il.end(); ++it) {
@@ -114,7 +114,7 @@ HengList<T>::HengList(std::initializer_list<T> il)
 }
 
 template<typename T>
-    void
+void
 HengList<T>::push_back(const T& val)
 {
     nPtr raw = static_cast<nPtr>(calloc(1, sizeof(Node)));
@@ -133,7 +133,7 @@ HengList<T>::push_back(const T& val)
 }
 
 template<typename T>
-    void
+void
 HengList<T>::push_front(const T& val)
 {
     nPtr raw = static_cast<nPtr>(calloc(1, sizeof(Node)));
@@ -152,7 +152,7 @@ HengList<T>::push_front(const T& val)
 }
 
 template<typename T>
-    void
+void
 HengList<T>::pop_back()
 {
     if (!tail_) return;
@@ -168,7 +168,7 @@ HengList<T>::pop_back()
 }
 
 template<typename T>
-    void
+void
 HengList<T>::pop_front()
 {
     if (!head_) return;
@@ -185,7 +185,7 @@ HengList<T>::pop_front()
 
 
 template<typename T>
-    typename HengList<T>::iterator
+typename HengList<T>::iterator
 HengList<T>::find(const T& val)
 {
     for (auto it = begin(); it != end(); ++it) {
@@ -195,7 +195,7 @@ HengList<T>::find(const T& val)
 }
 
 template<typename T>
-    typename HengList<T>::iterator
+typename HengList<T>::iterator
 HengList<T>::insert(iterator position, const T& val)
 {
     nPtr curr = position.get();
@@ -223,7 +223,7 @@ HengList<T>::insert(iterator position, const T& val)
 }
 
 template<typename T>
-    void
+void
 HengList<T>::remove(const T& val)
 {
     for (auto it = begin(); it != end(); ++it) {
@@ -232,7 +232,7 @@ HengList<T>::remove(const T& val)
 }
 
 template<typename T>
-    typename HengList<T>::iterator
+typename HengList<T>::iterator
 HengList<T>::erase(iterator position)
 {
     nPtr curr = position.get();

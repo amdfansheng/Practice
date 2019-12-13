@@ -31,33 +31,33 @@ struct HengList {
 
 		iterator& operator++() // frefix
 		{
-            np_ = np_->next;
-            return *this;
+		    np_ = np_->next;
+            	    return *this;
 		}
 		iterator operator++(int) // postfix
 		{
-            iterator temp(*this);
-            ++*this;
-            return temp;
+                    iterator temp(*this);
+                    ++*this;
+                    return temp;
 		}
 		iterator& operator--() // prefix
 		{
-            np_ = np_->prev;
-            return *this;
+                    np_ = np_->prev;
+                    return *this;
 		}
 		iterator operator--(int) // postfix
 		{
-            iterator temp(*this);
-            --*this;
-            return temp;
+                    iterator temp(*this);
+                    --*this;
+                    return temp;
 		}
 		bool operator==(const iterator& rhs) const noexcept
 		{
-		  return np_ == rhs.np_;
+		    return np_ == rhs.np_;
 		}
 		bool operator!=(const iterator& rhs) const noexcept
 		{
-		  return !operator==(rhs);
+		    return !operator==(rhs);
 		}
     private:
         nPtr get() { return np_; }

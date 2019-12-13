@@ -253,3 +253,4 @@ HengList<T>::erase(iterator position)
     --length_;
     return iterator(next);
 }
+

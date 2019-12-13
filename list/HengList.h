@@ -53,11 +53,11 @@ struct HengList {
 		}
 		bool operator==(const iterator& rhs) const noexcept
 		{
-		    return np_ == rhs.np_;
+            return np_ == rhs.np_;
 		}
 		bool operator!=(const iterator& rhs) const noexcept
 		{
-		    return !operator==(rhs);
+            return !operator==(rhs);
 		}
     private:
         nPtr get() { return np_; }

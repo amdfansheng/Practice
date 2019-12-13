@@ -3,9 +3,9 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cassert>
-#include <utility>
+#include <utility>              // initializer_list
 #include <cstddef>              // ptrdiff_t
-#include <iterator>             // std::input_iterator_tag
+#include <iterator>             // std::bidirectional_iterator_tag
 
 template <typename T>
 struct HengList {
